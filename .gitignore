@@ -35,5 +35,6 @@ Thumbs.db
 # ============= #
 Export/
 Builds/
+Archives/
+*.zip
 *.log
-
