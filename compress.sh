@@ -1,8 +1,5 @@
 #!/bin/sh
 
-# exit script on error
-set -e
-
 zip Archives/linux.zip Builds/LinuxUniversal/*
 zip Archives/osx.zip Builds/OSXUniversal/*
 zip Archives/win32.zip Builds/Win32/*
