@@ -32,4 +32,20 @@ unity-headless \
 
 cat $(pwd)/unity.log
 
+echo "Attempting to build $project for Android"
+unity-headless \
+  -logFile $(pwd)/unity.log \
+  -projectPath $(pwd) \
+  -executeMethod AutoBuilder.PerformAndroidBuild
+
+cat $(pwd)/unity.log
+
+echo "Attempting to build $project for iOS"
+unity-headless \
+  -logFile $(pwd)/unity.log \
+  -projectPath $(pwd) \
+  -executeMethod AutoBuilder.PerformIOSBuild
+
+cat $(pwd)/unity.log
+
 echo "Complete"
