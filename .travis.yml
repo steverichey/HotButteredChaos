@@ -5,8 +5,7 @@ rvm:
 install:
   - sh install.sh
 script:
-  - sh build.sh
-  - sh compress.sh
+  - sh deploy.sh
 before_deploy:
   - git fetch --tags
 deploy:
