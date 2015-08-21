@@ -1,14 +1,14 @@
 language: objective-c
 osx_image: xcode61
 rvm:
-- 2.1.2
+  - 2.1.2
 install:
-- sh install.sh
+  - sh install.sh
 script:
-- sh build.sh
-- sh compress.sh
+  - sh build.sh
+  - sh compress.sh
 before_deploy:
-- git fetch --tags
+  - git fetch --tags
 deploy:
   provider: releases
   api_key:
@@ -22,4 +22,6 @@ deploy:
     - "Archives/ios.zip"
   skip_cleanup: true
   on:
+    all_branches: true
+    tags: true
     repo: steverichey/HotButteredChaos
