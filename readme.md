@@ -1,4 +1,4 @@
-# [Hot, Buttered, Chaos](https://github.com/steverichey/HotButteredChaos)
+# [Hot, Buttered, Chaos](https://github.com/steverichey/HotButteredChaos) [![Build Status](https://travis-ci.org/steverichey/HotButteredChaos.svg)](https://travis-ci.org/steverichey/HotButteredChaos)
 
 Mostly Unity testing garbage. I don't know what I'm doing.
 
