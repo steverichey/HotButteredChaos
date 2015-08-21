@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# exit script on error
+set -e
+
 # Create basic unity alias
 alias unity="/Applications/Unity/Unity.app/Contents/MacOS/Unity"
 

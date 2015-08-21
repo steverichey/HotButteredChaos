@@ -1,6 +1,6 @@
 # [Hot, Buttered, Chaos](https://github.com/steverichey/HotButteredChaos) [![Build Status](https://travis-ci.org/steverichey/HotButteredChaos.svg)](https://travis-ci.org/steverichey/HotButteredChaos)
 
-Mostly Unity testing garbage. I don't know what I'm doing.
+Mostly junk for testing Unity, editor scripts, continuous integration, and so on. I don't know what I'm doing.
 
 ## References
 
