@@ -6,11 +6,18 @@ install:
 - sh install.sh
 script:
 - sh build.sh
+- sh compress.sh
 deploy:
   provider: releases
   api_key:
     secure: YXg6sYXEB3h/stgkoXRgxwl638/BQQTA2QUO2XF6EKPAUTicnY6V09vwkVNi+oZeUBYuPXzSIqJOxiSHMhFb+FFq1aCG/O6RfHp5arA5fDLIbTnX8zTT4rbXe3x3UF8PN73qpHFCq3KuV5ib7JUaUdHBs6cxqYBnuFv2De9Rs424jnanFTHOQnvc0p2mPhlICv6+3hdUWpkdPFe7gG1qvkzXsmnQbuaLwW4WmYhboS6DlUj+4wwK0J60B7FapW899COgFfoTIEiQGU6xU0BwHjzIRNGfgjEZDhnB30XAJJs5fSDO53T/e2emIqKI4j+G6Gs9l9o3OEje9pst1fYfraKdOwiGIMM/jn7vrm0AAEeN1PcF6KQBNq4BDf577yTmDtnk4MtnOfDR9iPcABCuz4P8NJfjjCYa3KZ+eGK8tPbxFBF0lIQId152wLR2/l6qoqVZ7lvAlI6CBJ3CVLJY71uKu6dyM+nwgfgP5MRurUOD6wCVzStLINFyfWKQ654+kUC/GkvbhjuDln3Tr/ylVcYmQZ4bJxy62Mv0nqt6htn5d8CQjBu1YoOVBaZq4HH65PFTXJeVSvoj8+NwS9oY0mAYlcCw537zTxKGxmyRMWOH/M1clHtpCn6xHC8MxjzS2n8Aa8oWoWk1i3tzRIJyxD50fbIozkr+rN3Jw9O/Els=
-  file: Builds/OSXUniversal/buttered_chaos.app
+  file:
+    - "Archives/win32.zip"
+    - "Archives/win64.zip"
+    - "Archives/linux.zip"
+    - "Archives/osx.zip"
+    - "Archives/android.zip"
+    - "Archives/ios.zip"
   skip_cleanup: true
   on:
     repo: steverichey/HotButteredChaos
