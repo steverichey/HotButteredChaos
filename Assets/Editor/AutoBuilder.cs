@@ -80,7 +80,7 @@ public static class AutoBuilder {
 		SetBuildTarget (BuildTarget.WebPlayer);
 		BuildTo ("WebPlayer");
 	}
-	
+
 	static void SetBuildTarget(BuildTarget target) {
 		EditorUserBuildSettings.SwitchActiveBuildTarget (target);
 		currentTarget = target;
@@ -92,7 +92,13 @@ public static class AutoBuilder {
 
 	static string GetProjectName() {
 		string[] s = Application.dataPath.Split ('/');
-		return s[s.Length - 2];
+		string suffix = "";
+
+		if (currentTarget == BuildTarget.StandaloneOSXIntel64 || currentTarget == BuildTarget.StandaloneLinux64 || currentTarget == BuildTarget.StandaloneWindows64) {
+			suffix = "64";
+		}
+
+		return s[s.Length - 2] + suffix;
 	}
 
 	static string GetExtension() {
@@ -113,7 +119,7 @@ public static class AutoBuilder {
 				return "";
 		}
 	}
-	
+
 	static string[] GetScenePaths() {
 		string[] scenes = new string[EditorBuildSettings.scenes.Length];
 
