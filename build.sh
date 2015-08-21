@@ -1,36 +1,35 @@
 #!/bin/sh
 
-project="ci-build"
+# Create basic unity alias
+alias unity="/Applications/Unity/Unity.app/Contents/MacOS/Unity"
 
-echo "Attempting to build $project for Windows"
-/Applications/Unity/Unity.app/Contents/MacOS/Unity \
-  -batchmode \
-  -nographics \
-  -silent-crashes \
+# Create headless unity alias
+alias unity-headless="unity -batchmode -nographics -silent-crashes -quit"
+
+project="hot-buttered-chaos"
+
+echo "Attempting to build $project for Windows 64"
+unity-headless \
   -logFile $(pwd)/unity.log \
   -projectPath $(pwd) \
-  -buildWindowsPlayer "$(pwd)/Build/windows/$project.exe" \
-  -quit
+  -executeMethod AutoBuilder.PerformWin64Build
+
+cat $(pwd)/unity.log
 
 echo "Attempting to build $project for OS X"
-/Applications/Unity/Unity.app/Contents/MacOS/Unity \
-  -batchmode \
-  -nographics \
-  -silent-crashes \
+unity-headless \
   -logFile $(pwd)/unity.log \
   -projectPath $(pwd) \
-  -buildOSXUniversalPlayer "$(pwd)/Build/osx/$project.app" \
-  -quit
+  -executeMethod AutoBuilder.PerformOSXUniversalBuild
+
+cat $(pwd)/unity.log
 
 echo "Attempting to build $project for Linux"
-/Applications/Unity/Unity.app/Contents/MacOS/Unity \
-  -batchmode \
-  -nographics \
-  -silent-crashes \
+unity-headless \
   -logFile $(pwd)/unity.log \
   -projectPath $(pwd) \
-  -buildLinuxUniversalPlayer "$(pwd)/Build/linux/$project.exe" \
-  -quit
+  -executeMethod AutoBuilder.PerformLinuxUniversalBuild
 
-echo 'Logs from build'
 cat $(pwd)/unity.log
+
+echo "Complete"
