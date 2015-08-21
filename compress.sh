@@ -3,17 +3,17 @@
 # exit on error
 set -e
 
-zip Archives/linux.zip Builds/LinuxUniversal/*
-zip Archives/osx.zip Builds/OSXUniversal/*
-zip Archives/win32.zip Builds/Win32/*
-zip Archives/win64.zip Builds/Win64/*
+zip $(pwd)/Archives/linux.zip $(pwd)/Builds/LinuxUniversal/*
+zip $(pwd)/Archives/osx.zip $(pwd)/Builds/OSXUniversal/*
+zip $(pwd)/Archives/win32.zip $(pwd)/Builds/Win32/*
+zip $(pwd)/Archives/win64.zip $(pwd)/Builds/Win64/*
 
-if [ -d "/Builds/Android" ]
+if [ -d "$(pwd)/Builds/Android" ]
 then
-  zip Archives/android.zip Builds/Android/*
+  zip $(pwd)/Archives/android.zip Builds/Android/*
 fi
 
-if [ -d "/Builds/iOS" ]
+if [ -d "$(pwd)/Builds/iOS" ]
 then
-  zip Archives/ios.zip Builds/iOS/*
+  zip $(pwd)/Archives/ios.zip Builds/iOS/*
 fi
